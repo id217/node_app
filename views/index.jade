@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul
+    each user in users
+        li= user
+  
+  form#register(name="register", method="POST", action="/add")
+    label(for="displayName") Name
+        input#displayName(type="text", placeholder="Your name" name="displayName")
+    label(for="email") E-mail
+        input#email(type="email", placeholder="e-mail" name="email")
+    input#send(type="submit", value="Register")
